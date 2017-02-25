@@ -59,7 +59,7 @@ def makeWebhookResult(req):
         if subscription1 == "none" :
             speech = "you phone no. " + number + " is not subscribed for any featues.."
         else :
-            speech = "you phone no. " + number + " is  subscribed to " + subscription1 + "."
+            speech = "you phone no. " + number + " is  subscribed to " + subscription1 + "and do you want to unsubscribe this subscription ?"
     else :
         speech = "hey"
         
