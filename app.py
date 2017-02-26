@@ -66,8 +66,8 @@ def makeWebhookResult(req):
         speech = "you have been unsubscribed for the feature" + subscription[number] +"."
         subscription[number] = "none"
     
-    else :
-        speech = "hey"
+    elif req.get("result").get("action") == "input.unknown" :
+        speech = "hey2"
         
 
     print("Response:")
