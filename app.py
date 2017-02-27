@@ -40,7 +40,11 @@ def makeWebhookResult(req):
     plan = {'9155465072':"Free Roaming", '9572390164':"Free Calling", '919973212':"Free 1GB Data", '9973617212':"30p/min", '91998870950':"Free Videocalling"}
     bill = {'9155465072': "100" , '9572390164': "200" , '919973212': "300" , '9973617212': "350.45" , '91998870950': "345.23" }
     subscription = {'9155465072': "callerTuneActivated" , '9572390164': "none" , '919973212': "callerTuneActivated" , '9973617212': "none" , '91998870950': "callerTuneActivated" }
-    if req.get("result").get("action") == "current.plan":
+    
+    number = parameters.get("Phonenumber")
+    if (plan.get(number) == None ):
+        speech = "Your number doesnot exist in database, please try with another one :) " 
+    elif req.get("result").get("action") == "current.plan":
         number = parameters.get("Phonenumber")
         comp= parameters.get("Company")
         speech = "The current plan of the user with phone no. " + number + " is " + str(plan[number]) + "."
@@ -49,7 +53,7 @@ def makeWebhookResult(req):
         newplan = parameters.get("Plan")
         prevplan = plan[number]
         plan[number] = newplan
-        speech = "The plan is changed from  " + prevplan + " to " + str(plan[number]) + "for the " + number + "."
+        speech = "The plan is changed from  " + prevplan + " to " + str(plan[number]) + " for the " + number + "."
     elif req.get("result").get("action") == "bill.enquiry":
         number = parameters.get("Phonenumber")
         speech = "The bill for   " + number + " is " + str(bill[number]) + "."
