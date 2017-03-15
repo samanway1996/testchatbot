@@ -1,0 +1,48 @@
+{
+      "messages": [
+        {
+          "type": 0,
+          "speech": "i missed it.can you say that again"
+        },
+        {
+          "title": "menu",
+          "subtitle": "Did you mean any of the following",
+          "imageUrl": "https://media.glassdoor.com/sqll/8418/amdocs-squarelogo.png",
+          "buttons": [
+            {
+              "text": "Current Plan",
+              "postback": "I wanna know my current plan"
+            },
+            {
+              "text": "Plan change",
+              "postback": "I wanna change plan"
+            },
+            {
+              "text": "None of the above",
+              "postback": "https://www.facebook.com/messages/t/samanway.dey.96/"
+            }
+          ],
+          "type": 1
+        },
+        {
+          "title": "menu",
+          "subtitle": "Did you mean any of the following",
+          "imageUrl": "https://media.glassdoor.com/l/4e/92/2a/d4/outside.jpg",
+          "buttons": [
+            {
+              "text": "High bill complaint",
+              "postback": "High bill has been deducted from my account"
+            },
+            {
+              "text": "bill inquiry",
+              "postback": ""
+            },
+            {
+              "text": "bill amount",
+              "postback": ""
+            }
+          ],
+          "type": 1
+        }
+      ]
+}
