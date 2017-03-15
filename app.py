@@ -90,7 +90,8 @@ def makeWebhookResult(req):
     print(speech)
 
     return {
-        "speech": speech,
+        if req.get("result").get("action") == "input.unknown" :
+            "speech": speech,
         "displayText": speech,
 
         #"data": {},
