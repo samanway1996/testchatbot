@@ -48,7 +48,7 @@ def makeWebhookResult(req):
         number = parameters.get("Phonenumber")
         comp= parameters.get("Company")
         contexts1=req.get("result").get("contexts")
-        for i in contexts:
+        for i in contexts1:
             if i.name == "test":
                 plan1=i.parameters.get("Plan")
                 prevphone=i.parameters.get("prephone")
