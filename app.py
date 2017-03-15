@@ -97,7 +97,7 @@ def makeWebhookResult(req):
     return {
         
         "speech": speech,
-        "messages": message,
+
         "displayText": speech,
 
         #"data": {},
