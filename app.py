@@ -50,7 +50,7 @@ def makeWebhookResult(req):
         contexts1=req.result.contexts[0].name
         #if contexts1[0].name == "test" or contexts1[0].name=="":
         
-        speech = "The current plan of the user with phone no. " + number + " is " + str(contexts1) + "."
+        speech = "The current plan of the user with phone no. " + number + " is " + "."
     elif req.get("result").get("action") == "current.planchange":
         number = parameters.get("Phonenumber")
         newplan = parameters.get("Plan")
