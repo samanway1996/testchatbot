@@ -92,6 +92,8 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
+        if req.get("result").get("action") == "input.unknown" :
+            "speech" = "hey1"
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
