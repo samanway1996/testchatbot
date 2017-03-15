@@ -84,7 +84,7 @@ def makeWebhookResult(req):
         subscription[number] = "none"
     
     elif req.get("result").get("action") == "input.unknown" :
-        speech = "hey2"
+        speech = "I Missed it! can you say that again...."
 #         with open('message.json') as json_data:
 #             message = json.loads(json_data)
 #             json_data.close()
