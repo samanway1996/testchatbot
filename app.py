@@ -85,9 +85,9 @@ def makeWebhookResult(req):
     
     elif req.get("result").get("action") == "input.unknown" :
         speech = "hey2"
-        with open('message.json') as json_data:
-            message = json.loads(json_data)
-            json_data.close()
+#         with open('message.json') as json_data:
+#             message = json.loads(json_data)
+#             json_data.close()
             
         
 
