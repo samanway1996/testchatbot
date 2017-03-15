@@ -48,10 +48,10 @@ def makeWebhookResult(req):
         number = parameters.get("Phonenumber")
         comp= parameters.get("Company")
         contexts1=req.get("result").get("contexts")
-        contexts2 = contexts1["parameters"];
+        contexts2 = contexts1[0].get("name")
         #if contexts1[0].name == "test" or contexts1[0].name=="":
         
-        speech = "The current plan of the user with phone no. " + number + " is " + "."
+        speech = "The current plan of the user with phone no. " + number + " is " +  contexts2 + "."
     elif req.get("result").get("action") == "current.planchange":
         number = parameters.get("Phonenumber")
         newplan = parameters.get("Plan")
