@@ -37,6 +37,7 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     speech="hey"
+    message=""
     plan = {'9155465072':"Free Roaming", '9572390164':"Free Calling", '919973212':"Free 1GB Data", '9973617212':"30p/min", '91998870950':"Free Videocalling"}
     bill = {'9155465072': "100" , '9572390164': "200" , '919973212': "300" , '9973617212': "350.45" , '91998870950': "345.23" }
     subscription = {'9155465072': "callerTuneActivated" , '9572390164': "none" , '919973212': "callerTuneActivated" , '9973617212': "none" , '91998870950': "callerTuneActivated" }
@@ -84,14 +85,19 @@ def makeWebhookResult(req):
     
     elif req.get("result").get("action") == "input.unknown" :
         speech = "hey2"
+        with open('strings.json') as json_data:
+            message = json.loads(json_data)
+            json_data.close()
+            
         
 
     print("Response:")
     print(speech)
 
     return {
-        if req.get("result").get("action") == "input.unknown" :
-            "speech": speech,
+        
+        "speech": speech,
+        "messages":message,
         "displayText": speech,
 
         #"data": {},
