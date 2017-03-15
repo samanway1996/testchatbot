@@ -42,7 +42,7 @@ def makeWebhookResult(req):
     subscription = {'9155465072': "callerTuneActivated" , '9572390164': "none" , '919973212': "callerTuneActivated" , '9973617212': "none" , '91998870950': "callerTuneActivated" }
     
     number = parameters.get("Phonenumber")
-    if (plan.get(number) == None ):
+    if (plan.get(number) == None and number != None):
         speech = "Your number doesnot exist in database, please try with another one :) " 
     elif req.get("result").get("action") == "current.plan":
         number = parameters.get("Phonenumber")
@@ -65,6 +65,10 @@ def makeWebhookResult(req):
     elif req.get("result").get("action") == "bill.enquiry":
         number = parameters.get("Phonenumber")
         speech = "The bill for   " + number + " is " + str(bill[number]) + "."
+        
+        
+        
+        
     elif req.get("result").get("action") == "bill.highcomplain" :
         number = parameters.get("Phonenumber")
         subscription1 = subscription[number]
